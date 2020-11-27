@@ -1,0 +1,743 @@
+{{ static }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>竞赛页面</title>
+    <link rel="stylesheet" href="../static/plugins/ele/index.css">
+    <script src="../static/js/vue"></script>
+    <style>
+        body {
+            background-image: url("../static/img/bg1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #test-content {
+            {#position: relative;#}
+            width: 50%;
+            {#margin-left: 16%;#}
+            /*margin-top: 10%;*/
+            {#padding: 20%;#}
+            padding-left: 36%;
+            padding-top: 20%;
+            display: flex;
+        }
+
+        #test-content div {
+
+        }
+
+        .selectFile {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .fileCalculate {
+            margin-top: 30px;
+            margin-left: 100px;
+        }
+
+        .shadow-mask {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 20;
+        }
+
+        /*.bounce1-enter-active {*/
+        /*    animation: bounce-in 2s forwards;*/
+
+        /*}*/
+        /*.bounce11-enter-active {*/
+        /*    animation: bounce11-in 2s forwards;*/
+
+        /*}*/
+        /*.bounce1-leave-to {*/
+        /*    position: absolute;*/
+        /*    top: 5%;*/
+        /*    left:5%;*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    z-index: 25;*/
+        /*    background: white;*/
+        /*}*/
+        /*.bounce2-enter-active {*/
+        /*    animation: bounce2-in 2s;*/
+        /*    animation-fill-mode:forwards;*/
+        /*}*/
+        /*.bounce3-enter-active {*/
+        /*    animation: bounce3-in 2s;*/
+        /*    animation-fill-mode:forwards;*/
+        /*}*/
+
+        .show1 {
+            animation: bounce-in .5s forwards;
+        }
+
+        .show11 {
+            animation: bounce-out .5s forwards;
+        }
+
+        .show2 {
+            animation: bounce2-in .5s forwards;
+        }
+
+        .show22 {
+            animation: bounce2-out .5s forwards;
+        }
+
+        .show3 {
+            animation: bounce3-in .5s forwards;
+        }
+
+        .show33 {
+            animation: bounce3-out .5s forwards;
+        }
+
+        .show4 {
+            animation: bounce4-in .5s forwards;
+        }
+
+        .show44 {
+            animation: bounce4-out .5s forwards;
+        }
+
+        .show5 {
+            animation: bounce5-in 1s forwards;
+        }
+
+        .show55 {
+            animation: bounce5-out 1s forwards;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+
+            100% {
+                position: absolute;
+                top: 20px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce-out {
+            0% {
+                position: absolute;
+                top: 20px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+            100% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce2-in {
+            0% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+
+            100% {
+                position: absolute;
+                top: 230px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce2-out {
+            0% {
+                position: absolute;
+                top: 230px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+            100% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce3-in {
+            0% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+
+            100% {
+                position: absolute;
+                top: 445px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce3-out {
+            0% {
+                position: absolute;
+                top: 445px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+            100% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce4-in {
+            0% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+
+            100% {
+                position: absolute;
+                top: 655px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce4-out {
+            0% {
+                position: absolute;
+                top: 655px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+            100% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce5-in {
+            0% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+
+            100% {
+                position: absolute;
+                top: 865px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        @keyframes bounce5-out {
+            0% {
+                position: absolute;
+                top: 865px;
+                left: 5%;
+                width: 270px;
+                height: 200px;
+                z-index: 25;
+                background: white;
+            }
+            100% {
+                position: absolute;
+                top: 30%;
+                left: 40%;
+                width: 600px;
+                height: 400px;
+                z-index: 25;
+                background: white;
+            }
+        }
+
+        .return_button {
+            position: absolute;
+            z-index: 25;
+            top: 5%;
+            left: 85%;
+            width: 120px;
+            background: rgba(255, 255, 255, 0.5);
+            color: white;
+            border-radius: 3px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 17px;
+            border: 0px;
+        }
+
+        .el-upload__tip {
+            color: #eeeeee;
+        }
+
+        .title-style {
+            position: absolute;
+            width: 600px;
+            text-align: center;
+            left: 50%;
+            margin-left: -300px;
+            color: #eeeeee;
+            font-size: 30px;
+            top: 20%;
+            letter-spacing: 5px
+        }
+
+        .show1 img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .show11 img {
+            width: 100%;
+            height: 100%;
+        }
+        #test {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="test" v-loading="loading" element-loading-text="计算中,请稍等..." element-loading-background="rgba(0, 0, 0, 0.8)">
+    <div class="shadow-mask" v-show="shadow_status">
+    </div>
+    <div style="position:absolute; width: 40%;left: 30%;z-index: 25;top: 35%;display: none">
+        <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage" :color="customColors"></el-progress>
+    </div>
+
+    <transition name="bounce1">
+        <div v-show="show1" :class="block1Status==true ? 'show1':'show11'" @click="showContent()"><img :src="this.levelTime" style="width: 100%;height: 100%"/></div>
+    </transition>
+
+    <transition name="bounce2">
+        <div v-show="show2" :class="block2Status==true ? 'show2':'show22'" @click="showContent2()"><img :src="this.fftTime" style="width: 100%;height: 100%"/></div>
+    </transition>
+    <transition name="bounce3">
+        <div v-show="show3" :class="block3Status==true ? 'show3':'show33'" @click="showContent3()"><img :src="this.fftAverage" style="width: 100%;height: 100%"/></div>
+    </transition>
+    <transition name="bounce4">
+        <div v-show="show4" :class="block4Status==true ? 'show4':'show44'" @click="showContent4()"><img :src=this.octaveTime style="width: 100%;height: 100%"/></div>
+    </transition>
+    <transition name="bounce5">
+        <div id="show2" v-show="show5" :class="block5Status==true ? 'show5':'show55'" @click="showContent5()"></div>
+    </transition>
+    <button class="return_button" @click="returnIndex()" v-show="returnStatus">
+        返回主页
+    </button>
+    <div class="title-style" style="">
+        基于机器学习的汽车噪声智能识别
+    </div>
+    <div id="test-content">
+        <div>
+            <div>
+                <span style="padding-right: 10px;color: #eeeeee">音频类型:</span>
+                <el-select v-model="audio_value" placeholder="请选择">
+                    <el-option
+                            v-for="item in options"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+            <div class="selectFile">
+                <el-upload
+                        class="upload-demo"
+                        ref="upload"
+                        action="#"
+                        :on-preview="handlePreview"
+                        :on-remove="handleRemove"
+                        :on-change="getFile"
+                        :file-list="fileList"
+                        :auto-upload="false">
+                    <el-button slot="trigger" size="large" type="primary">选取文件</el-button>
+                    <div slot="tip" class="el-upload__tip">只能上传mp3/wav文件，且不超过500MB</div>
+                </el-upload>
+            </div>
+        </div>
+        <div class="fileCalculate">
+            <el-button type="primary" @click="submitCalculate()">确认计算</el-button>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../static/js/echart.js"></script>
+<script src="../static/plugins/ele/index.js"></script>
+<script src="../static/js/axios.min.js"></script>
+<script>
+    // import echarts from "echarts.js";
+    // Vue.prototype.$echarts = echarts;
+    new Vue({
+        el: '#test',
+        data: {
+            visible: false,
+            options: [{
+                value: '怠速音频',
+                label: '怠速音频'
+            }, {
+                value: '加速音频',
+                label: '加速音频'
+            }],
+            audio_value: '',
+            fileList: [],
+            shadow_status: false,
+            show1: false,
+            show2: false,
+            show3: false,
+            show4: false,
+            show5: false,
+            returnStatus: false,
+            block1Status: true,
+            block2Status: true,
+            block3Status: true,
+            block4Status: true,
+            block5Status: true,
+            loading: false,
+            fftAverage: '',
+            fftTime: '',
+            levelTime: '',
+            octaveTime: '',
+            percentage: 10,
+            keyArray: [],
+            valueArray: [],
+            infoData:'',
+            customColors: [
+                {color: '#f56c6c', percentage: 20},
+                {color: '#e6a23c', percentage: 40},
+                {color: '#F2B01E', percentage: 60},
+                {color: '#EDD43D', percentage: 80},
+                {color: '#67C23A', percentage: 100}
+            ],
+            fileInfo: [],
+            fileList: [],
+
+        },
+        methods: {
+            getFile(file, fileList) {
+                console.log(file.raw);
+                this.fileInfo = file.raw;
+            },
+            //提交文件的方法
+            submitUpload() {
+                this.$refs.upload.submit();
+            },
+            submitCalculate() {
+                this.loading=true;
+                let formData = new FormData();
+                formData.append('audio_type', this.audio_value);
+                formData.append('audio_file', this.fileInfo);
+                axios({
+                    url: "/compare/",
+                    method: 'post',
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    },
+                    data: formData,
+                }).then((response) => {
+                    console.log(response);
+                    if (response.status == 200) {
+                        //需要用message的地方
+                        this.loading=false;
+                        console.log(response.data);
+                        this.fftAverage = response.data.fft_vs_average;
+                        this.fftTime = response.data.fft_vs_time;
+                        this.levelTime = response.data.level_vs_time;
+                        this.octaveTime = response.data.octave_vs_time;
+                        this.shadow_status = true;
+                        this.show1 = true;
+                        this.returnStatus = true;
+                        if (this.audio_value == "加速音频") {
+                             this.infoData = response.data.info_data;
+                             console.log(this.infoData);
+                             document.getElementById('show2').innerHTML= this.infoData;
+                        } else {
+                            this.keyArray = response.data.key_;
+                            this.valueArray = response.data.value_;
+                            var myChart = echarts.init(document.getElementById('show2'));
+                            myChart.setOption({
+                                title: {text: '噪声识别结果：', left: 'center', top: 20},
+                                tooltip: {
+                                    formatter: '{c}%'
+                                },
+                                xAxis: {
+                                    type: 'value',
+                                    show: false,
+                                    boundaryGap: ['5%', '5%'],
+                                },
+                                yAxis: {
+                                    type: 'category', //增加这一行代码，即可柱状图横置
+                                    data: this.keyArray,
+                                    axisTick: {
+                                        show: false
+                                    },
+                                    axisLine: {
+                                        show: false,
+                                    },
+                                    axisLabel: {
+                                        inside: false,
+                                        textStyle: {
+                                            color: '#000',
+                                            fontSize: '15',
+                                            itemSize: ''
+
+                                        }
+                                    },
+                                    max: 6
+                                },
+                                grid: {
+                                    containLabel: true
+                                },
+                                series: [{
+                                    name: '相似度',
+                                    type: 'bar',
+                                    data: this.valueArray,
+                                    label: {
+                                        show: true,
+                                        formatter: '{c}%',
+                                        position: 'right'
+                                    }
+                                }]
+                            });
+                        }
+
+
+                        var that = this;
+                        setTimeout(function () {
+                            that.show2 = true;
+                            that.percentage += 10;
+
+                        }, 1500);
+                        setTimeout(function () {
+                            that.show3 = true;
+                            that.percentage += 10;
+                        }, 3000);
+                        setTimeout(function () {
+                            that.show4 = true;
+                            that.percentage = 50;
+                        }, 4500);
+                        setTimeout(function () {
+                            that.show5 = true;
+                            that.percentage = 70;
+                        }, 6000);
+                        setTimeout(function () {
+                            var myChart = echarts.init(document.getElementById('show2'));
+                            myChart.resize();
+                            that.percentage = 100;
+
+                        }, 7000);
+
+                        Vue.prototype.$message({
+                            message: '文件处理完成!',
+                            type: 'success'
+                        });
+                    } else {
+                        Vue.prototype.$message({
+                            message: '文件处理失败!',
+                            type: 'error'
+                        });
+                    }
+                }).catch((error) => {
+                    this.loading = false;
+
+                })
+
+
+            },
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handlePreview(file) {
+                console.log(file);
+            },
+            confirmCalculation() {
+                this.shadow_status = true;
+                this.show1 = true;
+                this.returnStatus = true;
+                var that = this;
+                setTimeout(function () {
+                    that.show2 = true;
+                    that.percentage += 10;
+
+                }, 1500);
+                setTimeout(function () {
+                    that.show3 = true;
+                    that.percentage += 10;
+                }, 3000);
+                setTimeout(function () {
+                    that.show4 = true;
+                    that.percentage = 50;
+                }, 4500);
+                setTimeout(function () {
+                    that.show5 = true;
+                    that.percentage = 70;
+                }, 6000);
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                    that.percentage = 100;
+
+                }, 7000);
+
+            },
+            showContent() {
+                this.block1Status = !this.block1Status;
+                this.block2Status = true;
+                this.block3Status = true;
+                this.block4Status = true;
+                this.block5Status = true;
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                }, 420);
+            },
+            showContent2() {
+                this.block2Status = !this.block2Status;
+                this.block1Status = true;
+                this.block3Status = true;
+                this.block4Status = true;
+                this.block5Status = true;
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                }, 420);
+            },
+            showContent3() {
+                this.block3Status = !this.block3Status;
+                this.block2Status = true;
+                this.block1Status = true;
+                this.block4Status = true;
+                this.block5Status = true;
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                }, 420);
+            },
+            showContent4() {
+                this.block4Status = !this.block4Status;
+                this.block1Status = true;
+                this.block2Status = true;
+                this.block3Status = true;
+                this.block5Status = true;
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                }, 420);
+            },
+            showContent5() {
+                this.block5Status = !this.block5Status;
+                this.block1Status = true;
+                this.block2Status = true;
+                this.block3Status = true;
+                this.block4Status = true;
+                setTimeout(function () {
+                    var myChart = echarts.init(document.getElementById('show2'));
+                    myChart.resize();
+                }, 780);
+            },
+            returnIndex() {
+                this.show1 = false;
+                this.show2 = false;
+                this.show3 = false;
+                this.show4 = false;
+                this.show5 = false;
+                this.returnStatus = false;
+                this.shadow_status = false;
+                // setTimeout(function () {
+                //     var myChart = echarts.init(document.getElementById('show2'));
+                //     myChart.resize();
+                // },420);
+            },
+
+
+        },
+        mounted() {
+
+        }
+    })
+</script>
+</html>

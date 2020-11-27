@@ -10,7 +10,7 @@ import sys
 from utils import theme
 
 ############################################################  SQL配置  ############################################################
-DOCKER_SERVER = "192.168.43.230"
+DOCKER_SERVER = "192.168.50.230"
 REDIS_PORT = 16379
 MYSQL_PORT = 13306
 
@@ -20,9 +20,8 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 SECRET_KEY = '-*d9m2^xe-p)2kbmwr@bb13n33m9mfr@h#b0krb2v838n$ra-+'
 DEBUG = True
-
-# 白名单
 ALLOWED_HOSTS = ['*', ]
+# DEBUG = False
 
 # 中间件自定义白名单
 WHITE_REGEX_URL_LIST = ["/", ]
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    # 'dwebsocket',
     'sounds.apps.SoundsConfig',
 ]
 
@@ -176,7 +176,9 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'https://127.0.0.1:5666',
     'https://localhost:5666',
-    'http://192.168.43.230:5666'
+    'http://localhost:5666',
+    'http://192.168.43.230:5666',
+    'http://192.168.50.230:5666',
 )
 CORS_ALLOW_CREDENTIALS = True
 
@@ -188,3 +190,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 SIMPLEUI_HOME_INFO = False  # 服务器信息
 SIMPLEUI_ANALYSIS = False  # 不收集分析信息
 SIMPLEUI_STATIC_OFFLINE = True  # 离线模式
+
+##########################################################  配置长连接  ##########################################################
+# WEBSOCKET_ACCEPT_ALL = True
+
+
+##########################################################  文件路径配置  ##########################################################
+audio_path = os.path.join(BASE_DIR, 'apps/sounds/audio/')
+model_path = os.path.join(BASE_DIR, 'apps/sounds/model_/')
+wav_path = os.path.join(BASE_DIR, 'apps/sounds/wav_file/')
+
